@@ -56,6 +56,12 @@ export default {
           light: "hsl(var(--gold-light))",
           dark: "hsl(var(--gold-dark))",
         },
+        cardiac: {
+          DEFAULT: "hsl(var(--cardiac))",
+          light: "hsl(var(--cardiac-light))",
+          deep: "hsl(var(--cardiac-deep))",
+          glow: "hsl(var(--cardiac-glow))",
+        },
         cream: {
           DEFAULT: "hsl(var(--cream))",
           dark: "hsl(var(--cream-dark))",

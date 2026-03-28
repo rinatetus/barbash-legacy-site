@@ -13,8 +13,8 @@
     --popover: 40 20% 98%;
     --popover-foreground: 220 15% 12%;
 
-    --primary: 38 70% 50%;
-    --primary-foreground: 0 0% 5%;
+    --primary: 220 15% 12%;
+    --primary-foreground: 40 20% 98%;
 
     --secondary: 220 15% 12%;
     --secondary-foreground: 40 20% 95%;
@@ -22,15 +22,15 @@
     --muted: 40 10% 91%;
     --muted-foreground: 220 10% 46%;
 
-    --accent: 38 65% 55%;
-    --accent-foreground: 220 15% 8%;
+    --accent: 350 55% 42%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 40 10% 88%;
     --input: 40 10% 88%;
-    --ring: 38 70% 50%;
+    --ring: 350 55% 42%;
 
     --radius: 0.5rem;
 
@@ -46,14 +46,19 @@
     --navy-heading: 220 20% 8%;
     --sage: 38 60% 55%;
 
+    --cardiac: 350 55% 42%;
+    --cardiac-light: 350 50% 55%;
+    --cardiac-deep: 350 65% 32%;
+    --cardiac-glow: 0 70% 50%;
+
     --sidebar-background: 40 15% 96%;
     --sidebar-foreground: 220 15% 12%;
-    --sidebar-primary: 38 70% 50%;
-    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-primary: 350 55% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 40 10% 91%;
     --sidebar-accent-foreground: 220 15% 12%;
     --sidebar-border: 40 10% 88%;
-    --sidebar-ring: 38 70% 50%;
+    --sidebar-ring: 350 55% 42%;
   }
 }
 
@@ -83,6 +88,13 @@
     background-clip: text;
   }
 
+  .text-cardiac-gradient {
+    background: linear-gradient(135deg, hsl(350, 55%, 42%), hsl(0, 70%, 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .bg-teal-section {
     background: linear-gradient(180deg, hsl(220, 15%, 10%) 0%, hsl(220, 18%, 8%) 100%);
   }
@@ -101,19 +113,29 @@
     box-shadow: 0 0 40px hsla(38, 70%, 50%, 0.2);
   }
 
+  .cardiac-border-circle {
+    border: 3px solid hsl(350, 55%, 42%);
+    box-shadow: 0 0 40px hsla(350, 55%, 42%, 0.2);
+  }
+
   .card-luxury {
     @apply bg-card border border-border rounded-lg shadow-sm transition-all duration-500;
     box-shadow: 0 2px 12px hsla(220, 15%, 12%, 0.06);
   }
   .card-luxury:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px -8px hsla(38, 70%, 50%, 0.15);
+    box-shadow: 0 12px 32px -8px hsla(350, 55%, 42%, 0.15);
     border-color: hsl(38, 70%, 50%);
   }
 
   .gold-divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, hsl(38, 70%, 50%), transparent);
+  }
+
+  .cardiac-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(350, 55%, 42%), transparent);
   }
 }
 
@@ -139,9 +161,18 @@
   100% { transform: translateX(-50%); }
 }
 
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(1.05); }
+}
+
 .animate-marquee {
   animation: marquee 35s linear infinite;
 }
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
 }

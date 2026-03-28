@@ -1,5 +1,6 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Heart, Activity, Zap, Brain } from "lucide-react";
+import HeartbeatIcon from "./HeartbeatIcon";
 
 const cards = [
   {
@@ -28,10 +29,15 @@ export default function ExpertiseSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="expertise" className="py-24 md:py-32 px-6 bg-card">
-      <div ref={ref} className={`container mx-auto max-w-6xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+    <section id="expertise" className="py-24 md:py-32 px-6 bg-card relative overflow-hidden">
+      {/* Background heart watermark */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-[0.04]">
+        <HeartbeatIcon className="w-[600px] h-[600px] text-cardiac" />
+      </div>
+
+      <div ref={ref} className={`container mx-auto max-w-6xl transition-all duration-1000 relative z-10 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="text-center mb-16">
-          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3 font-body">Specializations</p>
+          <p className="text-xs uppercase tracking-[0.25em] text-gold mb-3 font-body">Specializations</p>
           <h2 className="font-display text-3xl md:text-4xl text-navy-heading">
             Areas of <span className="text-gold-gradient italic">Expertise</span>
           </h2>
@@ -44,7 +50,7 @@ export default function ExpertiseSection() {
               className="card-luxury p-8 group cursor-default"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <c.icon className="w-8 h-8 text-primary mb-5 group-hover:scale-110 transition-transform duration-300" />
+              <c.icon className="w-8 h-8 text-cardiac mb-5 group-hover:scale-110 transition-transform duration-300" />
               <h3 className="font-display text-xl text-navy-heading mb-3">{c.title}</h3>
               <p className="text-sm text-muted-foreground font-body leading-relaxed">{c.desc}</p>
             </div>

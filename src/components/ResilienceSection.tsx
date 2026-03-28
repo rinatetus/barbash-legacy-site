@@ -1,6 +1,7 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useCounter } from "@/hooks/useCounter";
 import { Shield } from "lucide-react";
+import HeartbeatIcon from "./HeartbeatIcon";
 
 const stats = [
   { end: 319, label: "Wounded Treated After Oct 7" },
@@ -14,11 +15,16 @@ export default function ResilienceSection() {
 
   return (
     <section id="resilience" className="py-24 md:py-32 px-6 bg-slate-section text-secondary-foreground relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cardiac/30 to-transparent" />
 
-      <div ref={ref} className={`container mx-auto max-w-5xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      {/* Background heart */}
+      <div className="absolute bottom-0 right-0 pointer-events-none opacity-[0.05]">
+        <HeartbeatIcon className="w-[400px] h-[400px] text-cardiac" />
+      </div>
+
+      <div ref={ref} className={`container mx-auto max-w-5xl transition-all duration-1000 relative z-10 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="text-center mb-12">
-          <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
+          <Shield className="w-10 h-10 text-cardiac mx-auto mb-4" />
           <h2 className="font-display text-3xl md:text-4xl text-secondary-foreground mb-2">
             When Rockets Fell, <span className="text-gold-gradient italic">The Cath Lab Never Closed</span>
           </h2>
@@ -36,21 +42,21 @@ export default function ResilienceSection() {
             <StatBlock key={i} {...s} active={isVisible} />
           ))}
           <div className="text-center">
-            <div className="font-display text-4xl md:text-5xl text-primary font-semibold">24/7</div>
+            <div className="font-display text-4xl md:text-5xl text-gold font-semibold">24/7</div>
             <div className="mt-2 text-xs font-body text-secondary-foreground/60 uppercase tracking-wider">Continuous Operations</div>
           </div>
           <div className="text-center">
-            <div className="font-display text-4xl md:text-5xl text-primary font-semibold">100+</div>
+            <div className="font-display text-4xl md:text-5xl text-gold font-semibold">100+</div>
             <div className="mt-2 text-xs font-body text-secondary-foreground/60 uppercase tracking-wider">Countries Served</div>
           </div>
         </div>
 
         {/* Quote */}
-        <div className="max-w-2xl mx-auto text-center border-t border-primary/20 pt-10">
+        <div className="max-w-2xl mx-auto text-center border-t border-gold/20 pt-10">
           <blockquote className="font-display text-lg md:text-xl text-secondary-foreground/90 italic leading-relaxed mb-4">
             "In times of peace and in moments of turmoil, Sheba has been there through it all — a symbol of resilience and dedication."
           </blockquote>
-          <p className="text-xs text-primary font-body tracking-wider uppercase">— Sheba Medical Center</p>
+          <p className="text-xs text-gold font-body tracking-wider uppercase">— Sheba Medical Center</p>
         </div>
 
         <div className="max-w-3xl mx-auto mt-10">
@@ -67,7 +73,7 @@ function StatBlock({ end, suffix = "", label, active }: { end: number; suffix?: 
   const count = useCounter(end, 2000, 0, active);
   return (
     <div className="text-center">
-      <div className="font-display text-4xl md:text-5xl text-primary font-semibold">
+      <div className="font-display text-4xl md:text-5xl text-gold font-semibold">
         {count.toLocaleString()}{suffix}
       </div>
       <div className="mt-2 text-xs font-body text-secondary-foreground/60 uppercase tracking-wider">{label}</div>
