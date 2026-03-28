@@ -26,7 +26,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden bg-background">
       {/* Subtle geometric pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(350, 72%, 45%) 0.5px, transparent 0)`,
+        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(38, 70%, 50%) 0.5px, transparent 0)`,
         backgroundSize: '48px 48px'
       }} />
 
