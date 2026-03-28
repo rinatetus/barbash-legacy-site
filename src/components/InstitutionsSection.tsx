@@ -2,29 +2,31 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const institutions = [
   "Sheba Medical Center — #7 World's Best Hospital",
-  "Top 10 Smart Hospital Globally",
-  "National Heart, Lung, and Blood Institute (NIH)",
+  "NIH / NHLBI",
   "Cleveland Clinic",
-  "EAPCI",
+  "Johns Hopkins University",
   "Tel Aviv University — Sackler Faculty of Medicine",
-  "Israeli National TAVR Registry",
+  "EAPCI / ESC",
+  "Newsweek Top 10",
+  "Israel Heart Society",
+  "Sanofi Center of Excellence",
+  "Talpiot Medical Leadership Program",
 ];
 
 export default function InstitutionsSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-20 px-6 overflow-hidden border-y border-border">
+    <section className="py-16 px-6 overflow-hidden bg-background border-y border-border">
       <div ref={ref} className={`transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
         <p className="text-xs uppercase tracking-[0.25em] text-primary mb-10 font-body text-center">Institutional Excellence</p>
 
-        {/* Scrolling marquee */}
         <div className="relative">
-          <div className="flex gap-8 animate-marquee whitespace-nowrap">
+          <div className="flex gap-6 animate-marquee whitespace-nowrap">
             {[...institutions, ...institutions].map((inst, i) => (
               <span
                 key={i}
-                className="inline-flex items-center px-6 py-3 rounded-full border border-border text-sm text-muted-foreground font-body tracking-wide flex-shrink-0"
+                className="inline-flex items-center px-6 py-3 rounded-full border border-border text-sm text-muted-foreground font-body tracking-wide flex-shrink-0 hover:border-primary/50 transition-colors"
               >
                 {inst}
               </span>
@@ -32,19 +34,6 @@ export default function InstitutionsSection() {
           </div>
         </div>
       </div>
-
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-        }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 }
