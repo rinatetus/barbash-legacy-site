@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import barbashPhoto from "@/assets/barbash-photo.png";
 
 const milestones = [
   { year: "1997", title: "Medical Degree", desc: "Ben-Gurion University of the Negev" },
@@ -45,14 +46,12 @@ export default function AboutSection() {
 
           {/* Photo placeholder - right */}
           <div className="md:col-span-2 order-1 md:order-2 flex justify-center">
-            <div className="w-56 h-56 md:w-72 md:h-72 rounded-full gold-border-circle bg-secondary flex items-center justify-center">
-              <div className="text-center">
-                <svg className="w-16 h-16 mx-auto text-primary/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-                <p className="text-xs text-muted-foreground mt-2 font-body">Professional Photo</p>
-              </div>
+            <div className="w-56 h-56 md:w-72 md:h-72 rounded-full gold-border-circle overflow-hidden">
+              <img
+                src={barbashPhoto}
+                alt="Professor Israel M. Barbash, MD — Interventional Cardiologist"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
