@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import HeartbeatIcon from "./HeartbeatIcon";
 
 const links = [
   { label: "Home", href: "#" },
@@ -16,13 +17,16 @@ export default function Footer() {
     <footer className="py-12 px-6 border-t border-border bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col items-center gap-8">
+          {/* Logo */}
+          <HeartbeatIcon className="w-10 h-10 text-cardiac" />
+
           {/* Nav */}
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
             {links.map((l) => (
               <a
                 key={l.href + l.label}
                 href={l.href}
-                className="text-xs text-muted-foreground hover:text-primary transition-colors font-body uppercase tracking-wider"
+                className="text-xs text-muted-foreground hover:text-gold transition-colors font-body uppercase tracking-wider"
               >
                 {l.label}
               </a>
@@ -41,7 +45,7 @@ export default function Footer() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-muted-foreground hover:text-primary transition-colors font-body inline-flex items-center gap-1"
+                className="text-xs text-muted-foreground hover:text-gold transition-colors font-body inline-flex items-center gap-1"
               >
                 {label} <ExternalLink className="w-3 h-3" />
               </a>
