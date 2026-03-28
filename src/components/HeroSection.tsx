@@ -7,7 +7,7 @@ function StatCounter({ end, suffix = "", prefix = "", label, sublabel, active }:
   const count = useCounter(end, 2200, 0, active);
   return (
     <div className="text-center">
-      <div className="font-display text-4xl md:text-5xl lg:text-6xl text-primary font-semibold">
+      <div className="font-display text-4xl md:text-5xl lg:text-6xl text-gold font-semibold">
         {prefix}{count.toLocaleString()}{suffix}
       </div>
       <div className="mt-2 text-xs md:text-sm font-body text-muted-foreground uppercase tracking-[0.15em]">
@@ -25,42 +25,50 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden bg-background">
+      {/* Background heart pulse watermark */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <HeartbeatIcon className="w-[500px] h-[500px] md:w-[700px] md:h-[700px] text-cardiac animate-pulse-glow" />
+      </div>
+
       {/* Subtle geometric pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(38, 70%, 50%) 0.5px, transparent 0)`,
+        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(350, 55%, 42%) 0.5px, transparent 0)`,
         backgroundSize: '48px 48px'
       }} />
 
-      {/* Gold accent lines */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+      {/* Gold accent line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
       <div ref={ref} className={`relative z-10 text-center max-w-6xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         
-        {/* Heartbeat icon */}
-        <HeartbeatIcon className="w-16 h-16 md:w-20 md:h-20 text-primary mx-auto mb-6" />
+        {/* Heartbeat icon — large and prominent in cardiac red */}
+        <HeartbeatIcon className="w-24 h-24 md:w-32 md:h-32 text-cardiac mx-auto mb-8" />
 
         <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[1.05] text-navy-heading mb-8">
           Saving Lives.{" "}
-          <span className="text-gold-gradient italic">Every Heartbeat Counts.</span>
+          <span className="text-cardiac-gradient italic">Every Heartbeat Counts.</span>
         </h1>
 
-        {/* Name — big, bold, unmissable */}
+        {/* Name — big, bold */}
         <p className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-navy-heading tracking-wide mb-3">
           Prof. Israel M. Barbash, MD
         </p>
 
         {/* Title — prominent gold */}
-        <p className="font-display text-lg sm:text-xl md:text-2xl text-primary tracking-[0.08em] uppercase mb-2">
+        <p className="font-display text-lg sm:text-xl md:text-2xl text-gold tracking-[0.08em] uppercase mb-2">
           Director of Cath Lab Services
         </p>
-        <p className="font-body text-base md:text-lg text-muted-foreground tracking-[0.1em] uppercase mb-2">
+        <p className="font-body text-base md:text-lg text-muted-foreground tracking-[0.1em] uppercase mb-4">
           Leviev Heart Center &nbsp;·&nbsp; Sheba Medical Center
         </p>
 
-        {/* Expertise tagline */}
-        <p className="font-display text-sm md:text-base text-foreground/70 italic tracking-wide mb-16 max-w-2xl mx-auto">
-          Leading the most demanding unit in one of the highest-ranked hospitals in the world
-        </p>
+        {/* Expertise tagline — highlighted & prominent */}
+        <div className="relative inline-block mb-16">
+          <div className="absolute inset-0 bg-cardiac/8 rounded-lg -m-3" />
+          <p className="relative font-display text-base md:text-lg lg:text-xl text-cardiac font-semibold italic tracking-wide max-w-2xl mx-auto px-4 py-2">
+            Leading the most demanding unit in one of the highest-ranked hospitals in the world
+          </p>
+        </div>
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8">
@@ -75,7 +83,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <a href="#about" className="absolute bottom-10 left-1/2 -translate-x-1/2 text-primary/40 hover:text-primary transition-colors" style={{ animation: 'scroll-indicator 2s ease-in-out infinite' }}>
+      <a href="#about" className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gold/40 hover:text-gold transition-colors" style={{ animation: 'scroll-indicator 2s ease-in-out infinite' }}>
         <ChevronDown className="w-6 h-6" />
       </a>
     </section>

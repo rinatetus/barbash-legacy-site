@@ -1,7 +1,7 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ChevronDown, Download } from "lucide-react";
 import { useState } from "react";
-import barbashPhoto from "@/assets/barbash-photo.png";
+import barbashPhoto from "@/assets/barbash-stethoscope.jpg";
 
 const milestones = [
   { year: "1973", title: "Born", desc: "August 11, Israel" },
@@ -81,13 +81,13 @@ function CVAccordion({ section }: { section: typeof cvSections[0] }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-5 text-left group"
       >
-        <span className="font-display text-lg text-navy-heading group-hover:text-primary transition-colors">{section.title}</span>
-        <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+        <span className="font-display text-lg text-navy-heading group-hover:text-gold transition-colors">{section.title}</span>
+        <ChevronDown className={`w-5 h-5 text-gold transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
       </button>
       <div className={`overflow-hidden transition-all duration-500 ${open ? 'max-h-[600px] opacity-100 pb-5' : 'max-h-0 opacity-0'}`}>
         <ul className="space-y-2">
           {section.content.map((item, i) => (
-            <li key={i} className="text-sm font-body text-muted-foreground leading-relaxed pl-4 border-l-2 border-primary/20">
+            <li key={i} className="text-sm font-body text-muted-foreground leading-relaxed pl-4 border-l-2 border-gold/20">
               {item}
             </li>
           ))}
@@ -105,7 +105,7 @@ export default function AboutSection() {
       <div ref={ref} className={`container mx-auto max-w-6xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {/* Section header */}
         <div className="text-center mb-16">
-          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3 font-body">Biography</p>
+          <p className="text-xs uppercase tracking-[0.25em] text-gold mb-3 font-body">Biography</p>
           <h2 className="font-display text-3xl md:text-4xl text-navy-heading">
             A Career Defined by <span className="text-gold-gradient italic">Excellence</span>
           </h2>
@@ -119,9 +119,9 @@ export default function AboutSection() {
               <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border" />
               {milestones.map((m, i) => (
                 <div key={i} className="flex gap-5 pb-6 last:pb-0 relative">
-                  <div className="mt-1.5 w-[15px] h-[15px] rounded-full border-2 border-primary bg-background flex-shrink-0 z-10" />
+                  <div className="mt-1.5 w-[15px] h-[15px] rounded-full border-2 border-cardiac bg-background flex-shrink-0 z-10" />
                   <div>
-                    <span className="text-xs font-body text-primary tracking-wider font-bold">{m.year}</span>
+                    <span className="text-xs font-body text-gold tracking-wider font-bold">{m.year}</span>
                     <h3 className="font-display text-lg text-navy-heading mt-0.5">{m.title}</h3>
                     <p className="text-sm text-muted-foreground font-body">{m.desc}</p>
                   </div>
@@ -150,7 +150,7 @@ export default function AboutSection() {
         {/* CV Accordion */}
         <div className="mt-20 max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3 font-body">Curriculum Vitae</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-gold mb-3 font-body">Curriculum Vitae</p>
             <h3 className="font-display text-2xl md:text-3xl text-navy-heading">
               Full <span className="text-gold-gradient italic">CV</span>
             </h3>
@@ -163,7 +163,7 @@ export default function AboutSection() {
           </div>
 
           <div className="text-center mt-8">
-            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-md border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-body text-sm tracking-wider uppercase">
+            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-md border-2 border-gold text-gold hover:bg-gold hover:text-primary-foreground transition-all duration-300 font-body text-sm tracking-wider uppercase">
               <Download className="w-4 h-4" />
               Download Full CV
             </button>
