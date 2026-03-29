@@ -33,19 +33,19 @@ export default function ProceduresSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="procedures" className="py-24 md:py-32 px-6 bg-teal-section text-secondary-foreground relative overflow-hidden">
+    <section id="procedures" className="py-24 md:py-32 px-6 bg-dark-section text-white relative overflow-hidden">
       {/* Accent lines */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-workshop-blue/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-workshop-blue/30 to-transparent" />
 
       <div ref={ref} className={`container mx-auto max-w-6xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="text-center mb-16">
-          <p className="text-xs uppercase tracking-[0.25em] text-gold mb-3 font-body">Catheterization Laboratories</p>
-          <h2 className="font-display text-3xl md:text-4xl text-secondary-foreground mb-4">
-            <span className="text-gold-gradient">6,500+</span> Life-Saving Procedures Annually
+          <p className="text-xs uppercase tracking-[0.25em] text-workshop-blue-light mb-3 font-body">Catheterization Laboratories</p>
+          <h2 className="font-display text-3xl md:text-4xl text-white mb-4">
+            <span className="text-accent-gradient">~7,000</span> Life-Saving Procedures Annually
           </h2>
-          <p className="font-body text-sm text-secondary-foreground/70 tracking-wide">
-            5 State-of-the-Art Catheterization Laboratories — The Largest in Israel
+          <p className="font-body text-sm text-white/70 tracking-wide">
+            Led by Prof. Barbash — 5 State-of-the-Art Catheterization Laboratories — The Largest in Israel
           </p>
         </div>
 
@@ -53,13 +53,13 @@ export default function ProceduresSection() {
           {categories.map((cat, i) => (
             <div
               key={i}
-              className="p-6 rounded-lg border border-gold/20 bg-teal-light/30 backdrop-blur-sm hover:border-gold/50 transition-all duration-300"
+              className="p-6 rounded-lg border border-workshop-blue/20 bg-white/5 backdrop-blur-sm hover:border-workshop-blue/50 transition-all duration-300"
             >
               <cat.icon className="w-7 h-7 text-cardiac mb-4" />
-              <h3 className="font-display text-lg text-secondary-foreground mb-4">{cat.title}</h3>
+              <h3 className="font-display text-lg text-white mb-4">{cat.title}</h3>
               <ul className="space-y-1.5">
                 {cat.items.map((item, j) => (
-                  <li key={j} className="text-xs font-body text-secondary-foreground/70 flex items-start gap-2">
+                  <li key={j} className="text-xs font-body text-white/70 flex items-start gap-2">
                     <span className="w-1 h-1 rounded-full bg-cardiac flex-shrink-0 mt-1.5" />
                     {item}
                   </li>

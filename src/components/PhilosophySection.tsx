@@ -6,11 +6,11 @@ export default function PhilosophySection() {
 
   return (
     <section className="py-24 md:py-32 px-6 bg-background relative">
-      <div className="gold-divider" />
+      <div className="accent-divider" />
       
       <div ref={ref} className={`container mx-auto max-w-3xl text-center py-16 transition-all duration-1000 relative ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {/* Background heart */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.06]">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.04]">
           <HeartbeatIcon className="w-[300px] h-[300px] text-cardiac" />
         </div>
 
@@ -18,7 +18,7 @@ export default function PhilosophySection() {
           "The numbers tell one story. But behind every statistic is a person — a father, a mother, a grandparent — who was given more time. That is the only metric that truly matters."
         </blockquote>
 
-        <p className="text-sm text-gold font-body tracking-[0.15em] uppercase">
+        <p className="text-sm text-primary font-body tracking-[0.15em] uppercase">
           — Prof. Israel M. Barbash
         </p>
 
@@ -27,7 +27,7 @@ export default function PhilosophySection() {
         </p>
       </div>
 
-      <div className="gold-divider" />
+      <div className="accent-divider" />
     </section>
   );
 }
