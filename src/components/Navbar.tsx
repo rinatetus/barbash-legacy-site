@@ -4,9 +4,9 @@ import HeartbeatIcon from "./HeartbeatIcon";
 
 const links = [
   { label: "Home", href: "#" },
-  { label: "About & CV", href: "#about" },
-  { label: "Expertise", href: "#expertise" },
   { label: "Procedures", href: "#procedures" },
+  { label: "Expertise", href: "#expertise" },
+  { label: "About & CV", href: "#about" },
   { label: "Research", href: "#research" },
   { label: "Resilience", href: "#resilience" },
   { label: "Press", href: "#press" },
@@ -34,7 +34,7 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between h-16 px-6">
         <a href="#" className="flex items-center gap-2 font-display text-xl tracking-wide text-navy-heading">
           <HeartbeatIcon className="w-8 h-8 text-cardiac" />
-          Prof. <span className="text-gold">Barbash</span>
+          Prof. <span className="text-primary">Barbash</span>
         </a>
 
         {/* Desktop */}
@@ -43,7 +43,7 @@ export default function Navbar() {
             <a
               key={l.href + l.label}
               href={l.href}
-              className="text-xs font-body text-muted-foreground hover:text-cardiac transition-colors duration-300 tracking-[0.12em] uppercase"
+              className="text-xs font-body text-muted-foreground hover:text-primary transition-colors duration-300 tracking-[0.12em] uppercase"
             >
               {l.label}
             </a>
@@ -69,7 +69,7 @@ export default function Navbar() {
               key={l.href + l.label}
               href={l.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-3 text-sm font-body text-muted-foreground hover:text-cardiac transition-colors tracking-wide uppercase"
+              className="block py-3 text-sm font-body text-muted-foreground hover:text-primary transition-colors tracking-wide uppercase"
             >
               {l.label}
             </a>

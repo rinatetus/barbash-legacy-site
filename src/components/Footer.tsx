@@ -3,9 +3,9 @@ import HeartbeatIcon from "./HeartbeatIcon";
 
 const links = [
   { label: "Home", href: "#" },
-  { label: "About & CV", href: "#about" },
-  { label: "Expertise", href: "#expertise" },
   { label: "Procedures", href: "#procedures" },
+  { label: "Expertise", href: "#expertise" },
+  { label: "About & CV", href: "#about" },
   { label: "Research", href: "#research" },
   { label: "Resilience", href: "#resilience" },
   { label: "Press", href: "#press" },
@@ -26,7 +26,7 @@ export default function Footer() {
               <a
                 key={l.href + l.label}
                 href={l.href}
-                className="text-xs text-muted-foreground hover:text-gold transition-colors font-body uppercase tracking-wider"
+                className="text-xs text-muted-foreground hover:text-primary transition-colors font-body uppercase tracking-wider"
               >
                 {l.label}
               </a>
@@ -45,7 +45,7 @@ export default function Footer() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-muted-foreground hover:text-gold transition-colors font-body inline-flex items-center gap-1"
+                className="text-xs text-muted-foreground hover:text-primary transition-colors font-body inline-flex items-center gap-1"
               >
                 {label} <ExternalLink className="w-3 h-3" />
               </a>

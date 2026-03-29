@@ -4,61 +4,63 @@
 
 @layer base {
   :root {
-    --background: 40 20% 98%;
-    --foreground: 220 15% 12%;
+    --background: 200 5% 95%;
+    --foreground: 230 45% 15%;
 
-    --card: 40 15% 96%;
-    --card-foreground: 220 15% 12%;
+    --card: 180 12% 93%;
+    --card-foreground: 230 45% 15%;
 
-    --popover: 40 20% 98%;
-    --popover-foreground: 220 15% 12%;
+    --popover: 200 5% 95%;
+    --popover-foreground: 230 45% 15%;
 
-    --primary: 220 15% 12%;
-    --primary-foreground: 40 20% 98%;
+    --primary: 230 35% 40%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 12%;
-    --secondary-foreground: 40 20% 95%;
+    --secondary: 190 50% 20%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 40 10% 91%;
-    --muted-foreground: 220 10% 46%;
+    --muted: 200 10% 88%;
+    --muted-foreground: 220 10% 40%;
 
-    --accent: 350 55% 42%;
+    --accent: 230 35% 40%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 10% 88%;
-    --input: 40 10% 88%;
-    --ring: 350 55% 42%;
+    --border: 200 10% 85%;
+    --input: 200 10% 85%;
+    --ring: 230 35% 40%;
 
     --radius: 0.5rem;
 
-    --gold: 38 70% 50%;
-    --gold-light: 40 65% 60%;
-    --gold-dark: 36 75% 38%;
-    --cream: 40 20% 98%;
-    --cream-dark: 40 15% 96%;
-    --teal: 220 15% 10%;
-    --teal-light: 220 12% 15%;
-    --slate-deep: 220 18% 8%;
-    --charcoal: 220 15% 12%;
-    --navy-heading: 220 20% 8%;
-    --sage: 38 60% 55%;
+    /* RAL-based palette */
+    --workshop-blue: 230 35% 40%;
+    --workshop-blue-light: 240 20% 60%;
+    --workshop-blue-dark: 230 40% 30%;
+    --light-teal: 180 20% 80%;
+    --arch-blue: 240 20% 55%;
+    --night-turquoise: 190 50% 20%;
+    --night-turquoise-deep: 190 55% 14%;
+    --papyrus-white: 200 5% 95%;
+    --signal-white: 0 0% 99%;
+    --navy-heading: 230 45% 15%;
+    --slate-deep: 190 55% 14%;
 
-    --cardiac: 350 55% 42%;
-    --cardiac-light: 350 50% 55%;
-    --cardiac-deep: 350 65% 32%;
+    /* Medical red — NOT pink, NOT rose */
+    --cardiac: 0 65% 42%;
+    --cardiac-light: 0 55% 52%;
+    --cardiac-deep: 0 70% 32%;
     --cardiac-glow: 0 70% 50%;
 
-    --sidebar-background: 40 15% 96%;
-    --sidebar-foreground: 220 15% 12%;
-    --sidebar-primary: 350 55% 42%;
+    --sidebar-background: 180 12% 93%;
+    --sidebar-foreground: 230 45% 15%;
+    --sidebar-primary: 230 35% 40%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 40 10% 91%;
-    --sidebar-accent-foreground: 220 15% 12%;
-    --sidebar-border: 40 10% 88%;
-    --sidebar-ring: 350 55% 42%;
+    --sidebar-accent: 200 10% 88%;
+    --sidebar-accent-foreground: 230 45% 15%;
+    --sidebar-border: 200 10% 85%;
+    --sidebar-ring: 230 35% 40%;
   }
 }
 
@@ -81,26 +83,26 @@
 }
 
 @layer utilities {
-  .text-gold-gradient {
-    background: linear-gradient(135deg, hsl(38, 70%, 50%), hsl(40, 65%, 60%));
+  .text-accent-gradient {
+    background: linear-gradient(135deg, hsl(230, 35%, 40%), hsl(240, 20%, 55%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-cardiac-gradient {
-    background: linear-gradient(135deg, hsl(350, 55%, 42%), hsl(0, 70%, 50%));
+    background: linear-gradient(135deg, hsl(0, 65%, 42%), hsl(0, 70%, 50%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .bg-teal-section {
-    background: linear-gradient(180deg, hsl(220, 15%, 10%) 0%, hsl(220, 18%, 8%) 100%);
+  .bg-dark-section {
+    background: linear-gradient(180deg, hsl(190, 50%, 20%) 0%, hsl(190, 55%, 14%) 100%);
   }
 
-  .bg-slate-section {
-    background: linear-gradient(180deg, hsl(220, 18%, 8%) 0%, hsl(220, 20%, 6%) 100%);
+  .bg-deep-section {
+    background: linear-gradient(180deg, hsl(190, 55%, 14%) 0%, hsl(190, 60%, 10%) 100%);
   }
 
   .animate-fade-up {
@@ -108,34 +110,34 @@
     opacity: 0;
   }
 
-  .gold-border-circle {
-    border: 3px solid hsl(38, 70%, 50%);
-    box-shadow: 0 0 40px hsla(38, 70%, 50%, 0.2);
+  .accent-border-circle {
+    border: 3px solid hsl(230, 35%, 40%);
+    box-shadow: 0 0 40px hsla(230, 35%, 40%, 0.2);
   }
 
   .cardiac-border-circle {
-    border: 3px solid hsl(350, 55%, 42%);
-    box-shadow: 0 0 40px hsla(350, 55%, 42%, 0.2);
+    border: 3px solid hsl(0, 65%, 42%);
+    box-shadow: 0 0 40px hsla(0, 65%, 42%, 0.2);
   }
 
   .card-luxury {
     @apply bg-card border border-border rounded-lg shadow-sm transition-all duration-500;
-    box-shadow: 0 2px 12px hsla(220, 15%, 12%, 0.06);
+    box-shadow: 0 2px 12px hsla(230, 45%, 15%, 0.06);
   }
   .card-luxury:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px -8px hsla(350, 55%, 42%, 0.15);
-    border-color: hsl(38, 70%, 50%);
+    box-shadow: 0 12px 32px -8px hsla(230, 35%, 40%, 0.15);
+    border-color: hsl(230, 35%, 40%);
   }
 
-  .gold-divider {
+  .accent-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(38, 70%, 50%), transparent);
+    background: linear-gradient(90deg, transparent, hsl(230, 35%, 40%), transparent);
   }
 
   .cardiac-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(350, 55%, 42%), transparent);
+    background: linear-gradient(90deg, transparent, hsl(0, 65%, 42%), transparent);
   }
 }
 
@@ -162,8 +164,13 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.15; transform: scale(1); }
-  50% { opacity: 0.25; transform: scale(1.05); }
+  0%, 100% { opacity: 0.08; transform: scale(1); }
+  50% { opacity: 0.14; transform: scale(1.02); }
+}
+
+@keyframes ecg-trace {
+  0% { stroke-dashoffset: 2000; }
+  100% { stroke-dashoffset: 0; }
 }
 
 .animate-marquee {
@@ -174,5 +181,10 @@
 }
 
 .animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.animate-ecg {
+  stroke-dasharray: 2000;
+  animation: ecg-trace 4s linear infinite;
 }

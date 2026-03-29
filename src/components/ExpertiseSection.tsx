@@ -37,9 +37,9 @@ export default function ExpertiseSection() {
 
       <div ref={ref} className={`container mx-auto max-w-6xl transition-all duration-1000 relative z-10 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="text-center mb-16">
-          <p className="text-xs uppercase tracking-[0.25em] text-gold mb-3 font-body">Specializations</p>
+          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3 font-body">Specializations</p>
           <h2 className="font-display text-3xl md:text-4xl text-navy-heading">
-            Areas of <span className="text-gold-gradient italic">Expertise</span>
+            Areas of <span className="text-accent-gradient italic">Expertise</span>
           </h2>
         </div>
 
