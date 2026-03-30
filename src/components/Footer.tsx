@@ -1,25 +1,26 @@
 import { ExternalLink } from "lucide-react";
-
-const links = [
-  { label: "Home", href: "#" },
-  { label: "Procedures", href: "#procedures" },
-  { label: "Expertise", href: "#expertise" },
-  { label: "About & CV", href: "#about" },
-  { label: "Research", href: "#research" },
-  { label: "Resilience", href: "#resilience" },
-  { label: "Press", href: "#press" },
-  { label: "Contact", href: "#contact" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const links = [
+    { label: t.nav.home, href: "#" },
+    { label: t.nav.procedures, href: "#procedures" },
+    { label: t.nav.expertise, href: "#expertise" },
+    { label: t.nav.about, href: "#about" },
+    { label: t.nav.research, href: "#research" },
+    { label: t.nav.resilience, href: "#resilience" },
+    { label: t.nav.press, href: "#press" },
+    { label: t.nav.contact, href: "#contact" },
+  ];
+
   return (
     <footer className="py-12 px-6 border-t border-border bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col items-center gap-8">
-          {/* Logo */}
           <span className="font-display text-lg text-navy-heading tracking-wide">Prof. <span className="text-primary">Barbash</span></span>
 
-          {/* Nav */}
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
             {links.map((l) => (
               <a
@@ -32,7 +33,6 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* Academic links */}
           <div className="flex items-center gap-4">
             {[
               ["Scholar", "https://scholar.google.com"],
@@ -53,10 +53,10 @@ export default function Footer() {
 
           <div className="text-center">
             <p className="text-sm text-muted-foreground font-body">
-              © 2026 Prof. Israel M. Barbash, MD — All Rights Reserved
+              {t.footer.copyright}
             </p>
-            <p className="text-xs text-muted-foreground/50 font-body mt-2 direction-rtl" dir="rtl">
-              אתר זה זמין גם בעברית
+            <p className="text-xs text-muted-foreground/50 font-body mt-2">
+              {t.footer.hebrewNote}
             </p>
           </div>
         </div>
