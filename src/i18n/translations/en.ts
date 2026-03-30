@@ -1,5 +1,5 @@
 export const en = {
-  dir: "ltr" as const,
+  dir: "ltr" as "ltr" | "rtl",
   nav: {
     home: "Home",
     procedures: "Procedures",
