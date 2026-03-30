@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col items-center gap-8">
           {/* Logo */}
-          <HeartbeatIcon className="w-10 h-10 text-cardiac" />
+          <span className="font-display text-lg text-navy-heading tracking-wide">Prof. <span className="text-primary">Barbash</span></span>
 
           {/* Nav */}
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">

@@ -17,10 +17,6 @@ export default function ResilienceSection() {
     <section id="resilience" className="py-24 md:py-32 px-6 bg-deep-section text-white relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cardiac/30 to-transparent" />
 
-      {/* Background heart */}
-      <div className="absolute bottom-0 right-0 pointer-events-none opacity-[0.05]">
-        <HeartbeatIcon className="w-[400px] h-[400px] text-cardiac" />
-      </div>
 
       <div ref={ref} className={`container mx-auto max-w-5xl transition-all duration-1000 relative z-10 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="text-center mb-12">

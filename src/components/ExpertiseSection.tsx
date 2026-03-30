@@ -30,10 +30,6 @@ export default function ExpertiseSection() {
 
   return (
     <section id="expertise" className="py-24 md:py-32 px-6 bg-card relative overflow-hidden">
-      {/* Background heart watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-[0.04]">
-        <HeartbeatIcon className="w-[600px] h-[600px] text-cardiac" />
-      </div>
 
       <div ref={ref} className={`container mx-auto max-w-6xl transition-all duration-1000 relative z-10 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="text-center mb-16">
