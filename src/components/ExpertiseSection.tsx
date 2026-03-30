@@ -1,6 +1,6 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Heart, Activity, Zap, Brain } from "lucide-react";
-import HeartbeatIcon from "./HeartbeatIcon";
+
 
 const cards = [
   {
