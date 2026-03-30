@@ -185,6 +185,13 @@
   animation-play-state: paused;
 }
 
+.animate-marquee-rtl {
+  animation: marquee-rtl 35s linear infinite;
+}
+.animate-marquee-rtl:hover {
+  animation-play-state: paused;
+}
+
 .animate-pulse-glow {
   animation: pulse-glow 4s ease-in-out infinite;
 }
