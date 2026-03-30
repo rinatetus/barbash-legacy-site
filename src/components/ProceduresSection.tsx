@@ -1,51 +1,33 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Stethoscope, HeartPulse, Activity, CircleDot, ArrowRight } from "lucide-react";
-
-const categories = [
-  {
-    icon: Stethoscope,
-    title: "Diagnostic",
-    items: ["Coronary Angiography", "Right & Left Heart Catheterization", "FFR/iFR", "IVUS", "OCT"],
-  },
-  {
-    icon: HeartPulse,
-    title: "Coronary Interventions (PCI)",
-    items: ["PCI with Drug-Eluting Stents", "CTO PCI", "Left Main PCI", "Bifurcation Stenting", "Rotational Atherectomy", "Intravascular Lithotripsy", "Balloon Angioplasty", "Drug-Coated Balloons", "Thrombectomy"],
-  },
-  {
-    icon: Activity,
-    title: "Structural Heart",
-    items: ["TAVR/TAVI", "Transcaval Access", "Balloon Aortic Valvuloplasty", "MitraClip/TEER", "Tricuspid Interventions", "ASD/PFO Closure", "Left Atrial Appendage Closure (Watchman)", "Alcohol Septal Ablation"],
-  },
-  {
-    icon: CircleDot,
-    title: "Hemodynamic Support",
-    items: ["IABP", "Impella", "ECMO (100+/year)", "Pericardiocentesis", "Endomyocardial Biopsy"],
-  },
-  {
-    icon: ArrowRight,
-    title: "Peripheral Vascular",
-    items: ["Peripheral Angiography & PTA", "Carotid Stenting", "Renal Artery Intervention"],
-  },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function ProceduresSection() {
   const { ref, isVisible } = useScrollAnimation();
+  const { t } = useLanguage();
+
+  const cats = t.procedures.categories;
+  const categories = [
+    { icon: Stethoscope, ...cats.diagnostic },
+    { icon: HeartPulse, ...cats.coronary },
+    { icon: Activity, ...cats.structural },
+    { icon: CircleDot, ...cats.hemodynamic },
+    { icon: ArrowRight, ...cats.peripheral },
+  ];
 
   return (
     <section id="procedures" className="py-24 md:py-32 px-6 bg-dark-section text-white relative overflow-hidden">
-      {/* Accent lines */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-workshop-blue/30 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-workshop-blue/30 to-transparent" />
 
       <div ref={ref} className={`container mx-auto max-w-6xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="text-center mb-16">
-          <p className="text-xs uppercase tracking-[0.25em] text-workshop-blue-light mb-3 font-body">Catheterization Laboratories</p>
+          <p className="text-xs uppercase tracking-[0.25em] text-workshop-blue-light mb-3 font-body">{t.procedures.sectionLabel}</p>
           <h2 className="font-display text-3xl md:text-4xl text-white mb-4">
-            <span className="text-accent-gradient">~7,000</span> Life-Saving Procedures Annually
+            <span className="text-accent-gradient">~7,000</span> {t.procedures.heading}
           </h2>
           <p className="font-body text-sm text-white/70 tracking-wide">
-            Led by Prof. Barbash — 5 State-of-the-Art Catheterization Laboratories — The Largest in Israel
+            {t.procedures.subheading}
           </p>
         </div>
 

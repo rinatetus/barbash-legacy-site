@@ -1,21 +1,22 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-
-
-const links = [
-  { label: "Home", href: "#" },
-  { label: "Procedures", href: "#procedures" },
-  { label: "Expertise", href: "#expertise" },
-  { label: "About & CV", href: "#about" },
-  { label: "Research", href: "#research" },
-  { label: "Resilience", href: "#resilience" },
-  { label: "Press", href: "#press" },
-  { label: "Contact", href: "#contact" },
-];
+import { Menu, X, Globe } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { lang, t, toggleLanguage } = useLanguage();
+
+  const links = [
+    { label: t.nav.home, href: "#" },
+    { label: t.nav.procedures, href: "#procedures" },
+    { label: t.nav.expertise, href: "#expertise" },
+    { label: t.nav.about, href: "#about" },
+    { label: t.nav.research, href: "#research" },
+    { label: t.nav.resilience, href: "#resilience" },
+    { label: t.nav.press, href: "#press" },
+    { label: t.nav.contact, href: "#contact" },
+  ];
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 60);
@@ -47,7 +48,14 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <span className="text-xs font-body text-muted-foreground/50 ml-2">EN / HE</span>
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/30 text-xs font-body text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 tracking-wider uppercase"
+            aria-label="Switch language"
+          >
+            <Globe className="w-3.5 h-3.5" />
+            {lang === "en" ? "עברית" : "English"}
+          </button>
         </div>
 
         {/* Mobile toggle */}
@@ -73,7 +81,13 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <span className="block py-3 text-xs font-body text-muted-foreground/50">EN / HE</span>
+          <button
+            onClick={() => { toggleLanguage(); setMobileOpen(false); }}
+            className="flex items-center gap-2 py-3 text-sm font-body text-primary tracking-wide uppercase"
+          >
+            <Globe className="w-4 h-4" />
+            {lang === "en" ? "עברית" : "English"}
+          </button>
         </div>
       )}
     </nav>

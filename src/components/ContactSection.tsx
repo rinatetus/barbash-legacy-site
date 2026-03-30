@@ -4,10 +4,12 @@ import { ExternalLink, MapPin, Building2, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function ContactSection() {
   const { ref, isVisible } = useScrollAnimation();
   const [submitted, setSubmitted] = useState(false);
+  const { t } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,54 +20,52 @@ export default function ContactSection() {
     <section id="contact" className="py-24 md:py-32 px-6 bg-card">
       <div ref={ref} className={`container mx-auto max-w-5xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="text-center mb-16">
-          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3 font-body">Get in Touch</p>
+          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3 font-body">{t.contact.sectionLabel}</p>
           <h2 className="font-display text-3xl md:text-4xl text-navy-heading">
-            <span className="text-accent-gradient italic">Contact</span>
+            <span className="text-accent-gradient italic">{t.contact.heading}</span>
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Form */}
           <div>
             {submitted ? (
               <div className="text-center py-12 card-luxury p-8">
-                <p className="font-display text-xl text-navy-heading mb-2">Thank you</p>
-                <p className="text-sm text-muted-foreground font-body">Your message has been received.</p>
+                <p className="font-display text-xl text-navy-heading mb-2">{t.contact.thankYou}</p>
+                <p className="text-sm text-muted-foreground font-body">{t.contact.messageReceived}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
-                <Input placeholder="Full Name" required className="bg-background border-border focus:border-primary" />
-                <Input type="email" placeholder="Email Address" required className="bg-background border-border focus:border-primary" />
-                <Input type="tel" placeholder="Phone (optional)" className="bg-background border-border focus:border-primary" />
-                <Input placeholder="Institution (optional)" className="bg-background border-border focus:border-primary" />
-                <Textarea placeholder="Your Message" rows={5} required className="bg-background border-border focus:border-primary resize-none" />
+                <Input placeholder={t.contact.placeholders.name} required className="bg-background border-border focus:border-primary" />
+                <Input type="email" placeholder={t.contact.placeholders.email} required className="bg-background border-border focus:border-primary" />
+                <Input type="tel" placeholder={t.contact.placeholders.phone} className="bg-background border-border focus:border-primary" />
+                <Input placeholder={t.contact.placeholders.institution} className="bg-background border-border focus:border-primary" />
+                <Textarea placeholder={t.contact.placeholders.message} rows={5} required className="bg-background border-border focus:border-primary resize-none" />
                 <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-workshop-blue-dark">
-                  Send Message
+                  {t.contact.sendButton}
                 </Button>
               </form>
             )}
           </div>
 
-          {/* Info */}
           <div className="space-y-8">
             <div className="flex gap-4">
               <Building2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
               <div>
-                <h3 className="font-display text-lg text-navy-heading">Leviev Heart Center</h3>
-                <p className="text-sm text-muted-foreground font-body">Sheba Medical Center</p>
+                <h3 className="font-display text-lg text-navy-heading">{t.contact.heartCenter}</h3>
+                <p className="text-sm text-muted-foreground font-body">{t.contact.shebaCenter}</p>
               </div>
             </div>
             <div className="flex gap-4">
               <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-muted-foreground font-body">Ramat Gan, Israel</p>
+              <p className="text-sm text-muted-foreground font-body">{t.contact.location}</p>
             </div>
             <div className="flex gap-4">
               <Globe className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-muted-foreground font-body">Languages: Hebrew, English</p>
+              <p className="text-sm text-muted-foreground font-body">{t.contact.languages}</p>
             </div>
 
             <div className="pt-4 border-t border-border">
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4 font-body">Academic Profiles</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4 font-body">{t.contact.academicProfiles}</p>
               <div className="flex flex-wrap gap-3">
                 {[
                   ["Google Scholar", "https://scholar.google.com"],
