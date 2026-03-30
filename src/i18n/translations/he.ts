@@ -29,9 +29,9 @@ export const he: Translations = {
     },
   },
   procedures: {
-    sectionLabel: "מעבדות צנתורים",
+    sectionLabel: "מחלקת צנתורים",
     heading: "פרוצדורות מצילות חיים בשנה",
-    subheading: "בהובלת פרופ׳ ברבש — 5 מעבדות צנתורים מתקדמות — הגדולות בישראל",
+    subheading: "בהובלת פרופ׳ ברבש — 5 חדרי צנתורים מתקדמים — הגדולים בישראל",
     categories: {
       diagnostic: {
         title: "אבחון",
