@@ -17,29 +17,29 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 px-6 bg-card">
+    <section id="contact" className="py-16 md:py-32 px-4 sm:px-6 bg-card">
       <div ref={ref} className={`container mx-auto max-w-5xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3 font-body">{t.contact.sectionLabel}</p>
-          <h2 className="font-display text-3xl md:text-4xl text-navy-heading">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-navy-heading">
             <span className="text-accent-gradient italic">{t.contact.heading}</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           <div>
             {submitted ? (
-              <div className="text-center py-12 card-luxury p-8">
-                <p className="font-display text-xl text-navy-heading mb-2">{t.contact.thankYou}</p>
+              <div className="text-center py-12 card-luxury p-6 sm:p-8">
+                <p className="font-display text-lg sm:text-xl text-navy-heading mb-2">{t.contact.thankYou}</p>
                 <p className="text-sm text-muted-foreground font-body">{t.contact.messageReceived}</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                 <Input placeholder={t.contact.placeholders.name} required className="bg-background border-border focus:border-primary" />
                 <Input type="email" placeholder={t.contact.placeholders.email} required className="bg-background border-border focus:border-primary" />
                 <Input type="tel" placeholder={t.contact.placeholders.phone} className="bg-background border-border focus:border-primary" />
                 <Input placeholder={t.contact.placeholders.institution} className="bg-background border-border focus:border-primary" />
-                <Textarea placeholder={t.contact.placeholders.message} rows={5} required className="bg-background border-border focus:border-primary resize-none" />
+                <Textarea placeholder={t.contact.placeholders.message} rows={4} required className="bg-background border-border focus:border-primary resize-none" />
                 <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-workshop-blue-dark">
                   {t.contact.sendButton}
                 </Button>
@@ -47,19 +47,19 @@ export default function ContactSection() {
             )}
           </div>
 
-          <div className="space-y-8">
-            <div className="flex gap-4">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="flex gap-3 sm:gap-4">
               <Building2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
               <div>
-                <h3 className="font-display text-lg text-navy-heading">{t.contact.heartCenter}</h3>
+                <h3 className="font-display text-base sm:text-lg text-navy-heading">{t.contact.heartCenter}</h3>
                 <p className="text-sm text-muted-foreground font-body">{t.contact.shebaCenter}</p>
               </div>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-3 sm:gap-4">
               <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
               <p className="text-sm text-muted-foreground font-body">{t.contact.location}</p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-3 sm:gap-4">
               <Globe className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
               <p className="text-sm text-muted-foreground font-body">{t.contact.languages}</p>
             </div>

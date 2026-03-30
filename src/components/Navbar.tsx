@@ -32,13 +32,13 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between h-16 px-6">
-        <a href="#" className="flex items-center gap-2 font-display text-xl tracking-wide text-navy-heading">
+      <div className="container mx-auto flex items-center justify-between h-14 sm:h-16 px-4 sm:px-6">
+        <a href="#" className="flex items-center gap-2 font-display text-lg sm:text-xl tracking-wide text-navy-heading">
           Prof. <span className="text-primary">Barbash</span>
         </a>
 
         {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-6">
           {links.map((l) => (
             <a
               key={l.href + l.label}
@@ -59,35 +59,38 @@ export default function Navbar() {
         </div>
 
         {/* Mobile toggle */}
-        <button
-          className="lg:hidden text-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        <div className="lg:hidden flex items-center gap-3">
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-full border border-primary/30 text-[10px] sm:text-xs font-body text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 tracking-wider uppercase"
+            aria-label="Switch language"
+          >
+            <Globe className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+            {lang === "en" ? "עב" : "EN"}
+          </button>
+          <button
+            className="text-foreground"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-background/98 backdrop-blur-md border-b border-border px-6 pb-6 pt-2">
+        <div className="lg:hidden bg-background/98 backdrop-blur-md border-b border-border px-4 sm:px-6 pb-4 sm:pb-6 pt-2">
           {links.map((l) => (
             <a
               key={l.href + l.label}
               href={l.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-3 text-sm font-body text-muted-foreground hover:text-primary transition-colors tracking-wide uppercase"
+              className="block py-2.5 sm:py-3 text-sm font-body text-muted-foreground hover:text-primary transition-colors tracking-wide uppercase"
             >
               {l.label}
             </a>
           ))}
-          <button
-            onClick={() => { toggleLanguage(); setMobileOpen(false); }}
-            className="flex items-center gap-2 py-3 text-sm font-body text-primary tracking-wide uppercase"
-          >
-            <Globe className="w-4 h-4" />
-            {lang === "en" ? "עברית" : "English"}
-          </button>
         </div>
       )}
     </nav>
