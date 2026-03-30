@@ -1,5 +1,4 @@
 import { ExternalLink } from "lucide-react";
-import HeartbeatIcon from "./HeartbeatIcon";
 
 const links = [
   { label: "Home", href: "#" },
