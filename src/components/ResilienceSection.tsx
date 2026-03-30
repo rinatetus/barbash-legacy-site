@@ -1,7 +1,7 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useCounter } from "@/hooks/useCounter";
 import { Shield } from "lucide-react";
-import HeartbeatIcon from "./HeartbeatIcon";
+
 
 const stats = [
   { end: 319, label: "Wounded Treated After Oct 7" },
