@@ -22,7 +22,7 @@ export const he: Translations = {
     stats: {
       publications: "פרסומים",
       citations: "ציטוטים",
-      annualProcedures: "פרוצדורות צוות שנתיות",
+      annualProcedures: "פרוצדורות שנתיות",
       yearsExperience: "שנות ניסיון",
       worldBest: "בית החולים הטוב בעולם",
       newsweek: "ניוזוויק 2026",
