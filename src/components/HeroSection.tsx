@@ -1,8 +1,6 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useCounter } from "@/hooks/useCounter";
 import { ChevronDown } from "lucide-react";
-import AnatomicalHeart from "./AnatomicalHeart";
-import ECGLine from "./ECGLine";
 
 function StatCounter({ end, suffix = "", prefix = "", label, sublabel, active }: { end: number; suffix?: string; prefix?: string; label: string; sublabel?: string; active: boolean }) {
   const count = useCounter(end, 2200, 0, active);
@@ -26,11 +24,6 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden bg-background">
-      {/* Anatomical heart silhouette — full hero background */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <AnatomicalHeart className="w-[550px] h-[620px] opacity-[0.16]" />
-      </div>
-
       {/* Subtle geometric pattern */}
       <div className="absolute inset-0 opacity-[0.02]" style={{
         backgroundImage: `radial-gradient(circle at 1px 1px, hsl(230, 35%, 40%) 0.5px, transparent 0)`,
@@ -40,17 +33,14 @@ export default function HeroSection() {
       {/* Top accent line */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-      {/* ECG line across full width */}
-      <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 pointer-events-none">
-        <ECGLine className="h-20 opacity-60" />
-      </div>
-
       <div ref={ref} className={`relative z-10 text-center max-w-6xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[1.05] text-navy-heading mb-8">
-          Saving Lives.{" "}
-          <span className="text-cardiac-gradient italic">Every Heartbeat Counts.</span>
+        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[1.05] text-navy-heading mb-4">
+          Saving Lives
         </h1>
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-8">
+          <span className="text-cardiac-gradient italic">Every Heartbeat Counts</span>
+        </h2>
 
         {/* Name */}
         <p className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-navy-heading tracking-wide mb-3">
