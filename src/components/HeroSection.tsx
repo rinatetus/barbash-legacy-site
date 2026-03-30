@@ -1,7 +1,7 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useCounter } from "@/hooks/useCounter";
 import { ChevronDown } from "lucide-react";
-import HeartbeatIcon from "./HeartbeatIcon";
+import AnatomicalHeart from "./AnatomicalHeart";
 import ECGLine from "./ECGLine";
 
 function StatCounter({ end, suffix = "", prefix = "", label, sublabel, active }: { end: number; suffix?: string; prefix?: string; label: string; sublabel?: string; active: boolean }) {
@@ -26,9 +26,9 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden bg-background">
-      {/* Background anatomical heart watermark */}
+      {/* Anatomical heart silhouette — full hero background */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <HeartbeatIcon className="w-[500px] h-[500px] md:w-[700px] md:h-[700px] text-cardiac animate-pulse-glow" />
+        <AnatomicalHeart className="w-[500px] h-[560px] md:w-[650px] md:h-[730px] lg:w-[750px] lg:h-[840px] opacity-[0.12]" />
       </div>
 
       {/* Subtle geometric pattern */}
@@ -40,15 +40,12 @@ export default function HeroSection() {
       {/* Top accent line */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-      {/* ECG line across hero */}
+      {/* ECG line across full width */}
       <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 pointer-events-none">
         <ECGLine className="h-20 opacity-60" />
       </div>
 
       <div ref={ref} className={`relative z-10 text-center max-w-6xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        
-        {/* Anatomical heart icon */}
-        <HeartbeatIcon className="w-24 h-24 md:w-32 md:h-32 text-cardiac mx-auto mb-8" />
 
         <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[1.05] text-navy-heading mb-8">
           Saving Lives.{" "}
