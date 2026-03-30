@@ -42,12 +42,6 @@ export default function ResilienceSection() {
           </div>
         </div>
 
-        <div className="max-w-2xl mx-auto text-center border-t border-white/20 pt-10">
-          <blockquote className="font-display text-lg md:text-xl text-white/90 italic leading-relaxed mb-4">
-            {t.resilience.quote}
-          </blockquote>
-          <p className="text-xs text-workshop-blue-light font-body tracking-wider uppercase">{t.resilience.quoteSource}</p>
-        </div>
 
         <div className="max-w-3xl mx-auto mt-10">
           <p className="text-sm font-body text-white/70 leading-relaxed text-center">
