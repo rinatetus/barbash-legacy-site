@@ -28,7 +28,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden bg-background">
       {/* Anatomical heart silhouette — full hero background */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <AnatomicalHeart className="w-[500px] h-[560px] md:w-[650px] md:h-[730px] lg:w-[750px] lg:h-[840px] opacity-[0.12]" />
+        <AnatomicalHeart className="w-[550px] h-[620px] opacity-[0.16]" />
       </div>
 
       {/* Subtle geometric pattern */}
