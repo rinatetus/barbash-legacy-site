@@ -193,8 +193,6 @@ export const en = {
     ],
     continuous: "Continuous Operations",
     countries: "Countries Served",
-    quote: '"In times of peace and in moments of turmoil, Sheba has been there through it all — a symbol of resilience and dedication."',
-    quoteSource: "— Sheba Medical Center",
     closing: "This is the unit Prof. Barbash leads — the most demanding department in one of the world's highest-ranked hospitals. A unit that didn't just survive wartime — it thrived. Treating soldiers and civilians, Jews and Arabs, Israelis and Palestinians — because in the cath lab, the only thing that matters is the heartbeat on the monitor.",
   },
   press: {
