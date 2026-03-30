@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/barbash-legacy-site/',  
+  base: process.env.GITHUB_PAGES ? '/barbash-legacy-site/' : '/',  
   server: {
     host: "::",
     port: 8080,
