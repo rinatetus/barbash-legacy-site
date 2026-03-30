@@ -16,29 +16,29 @@ export default function ProceduresSection() {
   ];
 
   return (
-    <section id="procedures" className="py-24 md:py-32 px-6 bg-dark-section text-white relative overflow-hidden">
+    <section id="procedures" className="py-16 md:py-32 px-4 sm:px-6 bg-dark-section text-white relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-workshop-blue/30 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-workshop-blue/30 to-transparent" />
 
       <div ref={ref} className={`container mx-auto max-w-6xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <p className="text-xs uppercase tracking-[0.25em] text-workshop-blue-light mb-3 font-body">{t.procedures.sectionLabel}</p>
-          <h2 className="font-display text-3xl md:text-4xl text-white mb-4">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-white mb-3 sm:mb-4">
             <span className="text-accent-gradient">~7,000</span> {t.procedures.heading}
           </h2>
-          <p className="font-body text-sm text-white/70 tracking-wide">
+          <p className="font-body text-xs sm:text-sm text-white/70 tracking-wide px-2">
             {t.procedures.subheading}
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {categories.map((cat, i) => (
             <div
               key={i}
-              className="p-6 rounded-lg border border-workshop-blue/20 bg-white/5 backdrop-blur-sm hover:border-workshop-blue/50 transition-all duration-300"
+              className="p-4 sm:p-6 rounded-lg border border-workshop-blue/20 bg-white/5 backdrop-blur-sm hover:border-workshop-blue/50 transition-all duration-300"
             >
-              <cat.icon className="w-7 h-7 text-cardiac mb-4" />
-              <h3 className="font-display text-lg text-white mb-4">{cat.title}</h3>
+              <cat.icon className="w-6 h-6 sm:w-7 sm:h-7 text-cardiac mb-3 sm:mb-4" />
+              <h3 className="font-display text-base sm:text-lg text-white mb-3 sm:mb-4">{cat.title}</h3>
               <ul className="space-y-1.5">
                 {cat.items.map((item, j) => (
                   <li key={j} className="text-xs font-body text-white/70 flex items-start gap-2">

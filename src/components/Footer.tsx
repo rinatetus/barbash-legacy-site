@@ -16,24 +16,24 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="py-12 px-6 border-t border-border bg-background">
+    <footer className="py-8 sm:py-12 px-4 sm:px-6 border-t border-border bg-background">
       <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-6 sm:gap-8">
           <span className="font-display text-lg text-navy-heading tracking-wide">Prof. <span className="text-primary">Barbash</span></span>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6">
             {links.map((l) => (
               <a
                 key={l.href + l.label}
                 href={l.href}
-                className="text-xs text-muted-foreground hover:text-primary transition-colors font-body uppercase tracking-wider"
+                className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors font-body uppercase tracking-wider"
               >
                 {l.label}
               </a>
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             {[
               ["Scholar", "https://scholar.google.com"],
               ["PubMed", "https://pubmed.ncbi.nlm.nih.gov"],
@@ -44,18 +44,18 @@ export default function Footer() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-muted-foreground hover:text-primary transition-colors font-body inline-flex items-center gap-1"
+                className="text-[10px] sm:text-xs text-muted-foreground hover:text-primary transition-colors font-body inline-flex items-center gap-1"
               >
-                {label} <ExternalLink className="w-3 h-3" />
+                {label} <ExternalLink className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
               </a>
             ))}
           </div>
 
           <div className="text-center">
-            <p className="text-sm text-muted-foreground font-body">
+            <p className="text-xs sm:text-sm text-muted-foreground font-body">
               {t.footer.copyright}
             </p>
-            <p className="text-xs text-muted-foreground/50 font-body mt-2">
+            <p className="text-[10px] sm:text-xs text-muted-foreground/50 font-body mt-2">
               {t.footer.hebrewNote}
             </p>
           </div>
