@@ -1,7 +1,6 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Heart, Activity, Zap, Brain } from "lucide-react";
 
-
 const cards = [
   {
     icon: Heart,
@@ -30,7 +29,6 @@ export default function ExpertiseSection() {
 
   return (
     <section id="expertise" className="py-24 md:py-32 px-6 bg-card relative overflow-hidden">
-
       <div ref={ref} className={`container mx-auto max-w-6xl transition-all duration-1000 relative z-10 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="text-center mb-16">
           <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3 font-body">Specializations</p>
