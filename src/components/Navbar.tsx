@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import HeartbeatIcon from "./HeartbeatIcon";
 
 const links = [
   { label: "Home", href: "#" },
@@ -33,7 +32,6 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-6">
         <a href="#" className="flex items-center gap-2 font-display text-xl tracking-wide text-navy-heading">
-          <HeartbeatIcon className="w-8 h-8 text-cardiac" />
           Prof. <span className="text-primary">Barbash</span>
         </a>
 
