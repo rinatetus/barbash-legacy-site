@@ -35,7 +35,8 @@ export default function ProceduresSection() {
           {categories.map((cat, i) => (
             <div
               key={i}
-              className="p-4 sm:p-6 rounded-lg border border-workshop-blue/20 bg-white/5 backdrop-blur-sm hover:border-workshop-blue/50 transition-all duration-300"
+              className={`p-4 sm:p-6 rounded-lg border border-workshop-blue/20 bg-white/5 backdrop-blur-sm hover:border-workshop-blue/50 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-[0.97]'}`}
+              style={{ transitionDelay: `${i * 120 + 200}ms` }}
             >
               <cat.icon className="w-6 h-6 sm:w-7 sm:h-7 text-cardiac mb-3 sm:mb-4" />
               <h3 className="font-display text-base sm:text-lg text-white mb-3 sm:mb-4">{cat.title}</h3>

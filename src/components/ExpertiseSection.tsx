@@ -24,8 +24,8 @@ export default function ExpertiseSection() {
             return (
               <div
                 key={i}
-                className="card-luxury p-5 sm:p-8 group cursor-default"
-                style={{ transitionDelay: `${i * 100}ms` }}
+                className={`card-luxury p-5 sm:p-8 group cursor-default transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-[0.97]'}`}
+                style={{ transitionDelay: `${i * 150 + 200}ms` }}
               >
                 <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-cardiac mb-4 sm:mb-5 group-hover:scale-110 transition-transform duration-300" />
                 <h3 className="font-display text-lg sm:text-xl text-navy-heading mb-2 sm:mb-3">{c.title}</h3>
