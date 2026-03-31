@@ -40,7 +40,7 @@ export default function PressSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {filtered.map((item, i) => (
-            <div key={i} className="card-luxury p-4 sm:p-6 flex flex-col">
+            <div key={i} className={`card-luxury p-4 sm:p-6 flex flex-col transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-[0.97]'}`} style={{ transitionDelay: `${i * 120 + 200}ms` }}>
               <div className="flex items-center gap-2 mb-2 sm:mb-3 flex-wrap">
                 <span className="px-2 py-0.5 text-[9px] sm:text-[10px] font-body uppercase tracking-wider bg-primary/10 text-primary rounded">{item.source}</span>
                 <span className="px-2 py-0.5 text-[9px] sm:text-[10px] font-body uppercase tracking-wider bg-muted text-muted-foreground rounded">{item.category}</span>
