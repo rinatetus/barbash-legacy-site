@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "sdk_version": "0.26.1",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "barbash-legacy",
+      "version": "0.1.0",
+      "title": "Barbash Legacy"
+    },
+    "tools": [
+      {
+        "name": "get_profile",
+        "title": "Get profile",
+        "description": "Get the public profile of Prof. Israel M. Barbash, MD: name, title, institution, biography, career milestones and philosophy.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_procedures",
+        "title": "List procedures",
+        "description": "List the cardiac catheterization procedures performed by Prof. Barbash's team, optionally filtered to a single category.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "category": {
+              "description": "Optional category filter. Omit to return all categories.",
+              "type": "string",
+              "enum": [
+                "diagnostic",
+                "coronary",
+                "structural",
+                "hemodynamic",
+                "peripheral"
+              ]
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_expertise",
+        "title": "Get areas of expertise",
+        "description": "Get Prof. Barbash's clinical areas of expertise (TAVR/TAVI, structural heart, complex coronary interventions, cardiovascular big data & AI) with descriptions.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_cv",
+        "title": "Get CV",
+        "description": "Get Prof. Barbash's curriculum vitae sections: patents, awards & honors, research grants, professional memberships, journal reviewer roles and publications summary.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "section": {
+              "description": "Optional case-insensitive section title filter, e.g. 'Awards' or 'Patents'.",
+              "type": "string"
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_research",
+        "title": "Get research and outcomes",
+        "description": "Get research impact for Prof. Barbash: citation and publication stats, research highlights (National TAVR Registry, transcaval access, AI/microRNA biomarkers) and quality-metric timeline.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_press",
+        "title": "List press and media",
+        "description": "List press mentions, interviews, conference lectures and publications featuring Prof. Barbash, optionally filtered by category.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "category": {
+              "description": "Optional category filter. Omit to return all items.",
+              "type": "string",
+              "enum": [
+                "Interviews",
+                "Publications",
+                "Conferences",
+                "News"
+              ]
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_contact",
+        "title": "Get contact information",
+        "description": "Get public contact details for Prof. Barbash's practice: heart center, medical center, location and languages spoken.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
